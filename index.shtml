@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>USOCKET</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="Content-Type" content="text/html;
+      charset=windows-1252">
+  </head>
+  <body>
+    <div class="header">
+      <h1>SNMP - Simple Network Management Protocol for Common Lisp<br>
+      </h1>
+    </div>
+    <ul>
+    </ul>
+    <h2>Overview</h2>
+    <p> <a
+        href="file:///Users/binghe/Lisp/snmp-web/images/mibrowser.jpg">
+        <img
+          src="file:///Users/binghe/Lisp/snmp-web/images/mibrowser.jpg"
+          id="mibrowser" alt="MIB Browser" style="border: 0px solid ;
+          width: 80%;"> </a> </p>
+    <pre>;;;; A Sample SNMPv3 Query<br>CL-USER 6 &gt; <span style="color: rgb(255, 0, 0);">(snmp:with-open-session (s "192.168.xxx.xxx" :user "md5" :auth '(:md5 "vHunxJXPRdUyAzjY"))</span><br style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">               (snmp:snmp-walk s "system"))</span><br>((#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysDescr.0&gt;<br> &nbsp;"Linux 2950.lab.163.org 2.6.26-2-amd64 #1 SMP Thu Nov 25 04:30:55 UTC 2010 x86_64")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysObjectID.0&gt; #&lt;ASN.1:SIMPLE-OID SNMPv2-SMI::enterprises.8072.3.2.10&gt;)<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysUpTime.0&gt; #&lt;ASN.1:TIMETICKS (19038239) 52:53:02.39&gt;)<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysContact.0&gt; "Chun Tian (binghe) &lt;binghe.lisp@gmail.com&gt;")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysName.0&gt; "2950.lab.163.org")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysLocation.0&gt; "Hangzhou")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysORLastChange.0&gt; #&lt;ASN.1:TIMETICKS (0) 0:00:00.00&gt;)<br> ... )<br><br>;;;; Load a new MIB into Lisp at runtime<br>CL-USER 7 &gt; <span style="color: rgb(255, 0, 0);">(snmp:load-mib #p"MIB:IETF;IF-MIB")</span><br>T<br>CL-USER 8 &gt; <span style="color: rgb(255, 0, 0);">(asn.1:oid "ifTable")</span><br>#&lt;ASN.1:OBJECT-ID IF-MIB::ifTable (2) [1]&gt;</pre>
+<h2>Features</h2>
+<ul><li>Full SNMP protocol support including SNMPv3</li><li>MIB support based on <a href="file:///Users/binghe/Lisp/snmp-web/asn1.html">ASN.1</a> package,
+resovling OID names from raw ASN.1 definitions.</li><li>Fast SNMP packet encode/decode based on CLOS features.</li><li>UDP auto-retransmit supports.</li><li>Portable SNMP server running in Lisp image.</li><li>LISP-MIB for large Lisp application infomation organization.</li><li>GUI utilities on LispWorks.</li><li style="font-weight: bold; color: rgb(255, 0, 0);">MIB Compiler on
+all support platform (new in 6.0)</li><li><span style="font-weight: bold; color: rgb(255, 0, 0);">MIB
+Interpreter, dynamic loading of MIB files at runtime (new in 6.0)</span></li><li><span style="font-weight: bold; color: rgb(255, 0, 0);">SNMP/TCP support (new in 6.1)<br></span></li></ul><h2><a name="implementations">Supported implementations</a></h2>
+    <p>Currently at least these implementations are supported:</p>
+    <ul>
+      <li><a href="http://www.franz.com/products/allegro-common-lisp/">Allegro
+
+
+
+
+
+
+          CL</a></li>
+      <li><a href="http://common-lisp.net/project/armedbear/">ABCL </a>(ArmedBear)</li>
+      <li><a href="http://ccl.clozure.com">Clozure CL</a> (aka OpenMCL)</li>
+      
+      <li>GNU <a href="http://www.clisp.org">CLISP</a></li>
+      <li><a href="http://www.cons.org/cmucl">CMUCL</a></li>
+      <li><a href="https://common-lisp.net/project/ecl/">ECL</a></li>
+      <li><a href="http://www.lispworks.com/products/lispworks.html">LispWorks</a>
+        (4.3 and up)</li>
+      
+      
+      <li><a href="http://www.sbcl.org">SBCL</a></li>
+      
+    </ul>
+    <h2><a name="community">Community</a></h2>
+    <p>This project has started January 2006. There isn't much of a
+      community yet, though I'd like there to be one. So, you're invited
+      to join the mailing list, announce yourself and even join the
+      effort! </p>
+    <p>Development discussion takes place on&nbsp;<a href="https://lists.sourceforge.net/lists/listinfo/cl-net-snmp-general">cl-net-snmp-general</a>
+    </p>
+    <p>Project tracking happens on <a href="https://github.com/cl-net-snmp/snmp.git">GitHub</a>. Please
+      take note of the guidelines before entering a bug or enhancement
+      request into the database.</p>
+    <div class="roadmap">
+      <h2><a name="development">Development</a></h2>
+      <p>Development will at least follow the steps outlined below. Yet
+        to be determined is whether the currently mentioned steps will
+        be enough to release version 1.0. Possibly, UDP sockets remain
+        to be addressed before doing 1.0; that will depend on your
+        reactions :-) </p>
+      <p>The targeted implementations listed in the status table below
+        are not a final list: others can be added if/when the need or
+        interest arises. </p>
+      <p>To use the latest
+        development version, make sure you have <a href="http://git-scm.com/">git</a> installed and execute this
+        command: </p>
+      <pre> $ git clone https://github.com/cl-net-snmp/snmp.git<br><br></pre><h2>Download &amp; Old Releases</h2><pre>All release files can be downloaded <a href="https://common-lisp.net/project/cl-net-snmp/release/">here</a>.<br><br></pre></div><hr>
+    <div style="float: left; font-size: x-small; font-weight: bold;">Back
+to
+
+
+
+
+
+
+
+
+
+
+      <a href="http://common-lisp.net/">Common-lisp.net</a>. </div>
+    <div class="check" style="float: right;"> <a href="http://validator.w3.org/check/referer">Valid XHTML 1.0
+        Strict</a> </div>
+  
+
+</body></html>
