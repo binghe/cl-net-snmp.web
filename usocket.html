@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <title>cl-net-snmp</title>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<div id="framework"> <a
+ href="https://sourceforge.net/projects/cl-net-snmp/"> <img
+ src="http://sflogo.sourceforge.net/sflogo.php?group_id=209101?type=2"
+ alt="SourceForge.net Logo" id="logo"
+ style="border: 0px solid ; width: 88px; height: 31px;"> </a>
+<div id="nav">
+<div id="navtext"> <a
+ href="http://common-lisp.net/project/cl-net-snmp/">Home</a>
+&nbsp;&nbsp;&nbsp; <a
+ href="https://sourceforge.net/projects/cl-net-snmp/">SF Project</a>
+&nbsp;&nbsp;&nbsp; <a href="asn1.html">ASN.1</a> &nbsp;&nbsp;&nbsp; <a
+ href="snmp.html">SNMP</a> &nbsp;&nbsp;&nbsp; <a href="usocket.html"
+ class="on">USOCKET-UDP</a> &nbsp;&nbsp;&nbsp; <a href="lispworks.html">LispWorks-UDP</a>
+&nbsp;&nbsp;&nbsp; <a href="others.html">Others</a> &nbsp;&nbsp;&nbsp;
+<a href="about.html">About</a> </div>
+</div>
+<br clear="all">
+<!-- ============= STYLE.ORG ============= -->
+<div id="style">
+<div class="breadcrumb"> <a
+ href="http://common-lisp.net/project/cl-net-snmp/">cl-net-snmp</a>&gt;
+</div>
+<h1>USOCKET-UDP</h1>
+<div class="deck"> UDP patch for USOCKET 0.4.x, the portable networking
+package for Common Lisp. </div>
+<h2>Platform Table</h2>
+<table class="parseresults" border="0" cellpadding="0" cellspacing="4">
+  <tbody>
+    <tr valign="bottom">
+      <td width="11%"><strong>CMUCL</strong></td>
+      <td width="11%"><strong>SBCL</strong></td>
+      <td width="11%"><strong>Clozure CL</strong></td>
+      <td width="11%"><strong>LispWorks</strong></td>
+      <td width="11%"><strong>Allegro CL</strong></td>
+      <td width="11%"><strong>Scieneer CL</strong></td>
+      <td width="11%"><strong>CLISP</strong></td>
+      <td width="11%"><strong>ECL</strong></td>
+      <td width="11%"><strong>ABCL</strong></td>
+    </tr>
+    <tr>
+<!-- CMUCL --> <td valign="top"> 2008-08 (19E)<br>
+2008-10 (19E) </td>
+<!-- SBCL --> <td valign="top"> 1.0.18 (debian) 1.0.20<br>
+      </td>
+<!-- Clozure CL --> <td valign="top"> 1.2<br>
+      </td>
+<!-- LispWorks --> <td valign="top"> 5.0.2<br>
+5.1.1 </td>
+<!-- Allegro CL --> <td valign="top"> 8.1<br>
+      </td>
+<!-- Scieneer CL --> <td valign="top"> 1.3.8.1<br>
+      </td>
+<!-- CLISP --> <td valign="top"> <br>
+      </td>
+<!-- ECL --> <td valign="top"> 0.9j<br>
+      </td>
+<!-- ABCL --> <td valign="top"> <br>
+      </td>
+    </tr>
+    <tr>
+<!-- CMUCL --> <td valign="top"> <strong>Summary</strong>
+      <p> <span style="color: rgb(51, 102, 153);"><strong>Supported</strong></span>
+      </p>
+      </td>
+<!-- SBCL --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(51, 102, 153);"><strong>Supported</strong></span>
+      </p>
+      </td>
+<!-- Clozure CL --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(51, 102, 153);"><strong>Supported</strong></span>
+      </p>
+      </td>
+<!-- LispWorks --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(51, 102, 153);"><strong>Supported</strong></span>
+      </p>
+      <p> MP needed on non-win32 platforms </p>
+      </td>
+<!-- Allegro CL --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(51, 102, 153);"><strong>Supported</strong></span>
+      </p>
+      </td>
+<!-- Scieneer CL --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(51, 102, 153);"><strong>Supported</strong></span>
+      </p>
+      <p> version &gt;= 1.3.9 </p>
+      </td>
+<!-- CLISP --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(153, 51, 51);"><strong>UnSupported</strong></span>
+      </p>
+      </td>
+<!-- ECL --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(51, 102, 153);"><strong>Supported</strong></span>
+      </p>
+      </td>
+<!-- ABCL --> <td valign="top">&nbsp;
+      <p> <span style="color: rgb(153, 51, 51);"><strong>Unsupported</strong></span>
+      </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>Release</h2>
+<p>Latest version of USOCKET-UDP is 2.6, released on September 24,
+2010. Changes in this version:<br>
+</p>
+<ul>
+  <li>Fixed working with USOCKET trunk (0.5),</li>
+  <li>Fixed SOCKET-CONNECT for SBCL (merge from upstream),</li>
+  <li>Adjust +max-datagram-packet-size+ from 65536 to 65507.<br>
+  </li>
+</ul>
+<h2>Download</h2>
+<p>Download all versions of the USOCKET-UDP package (source tar.gz) <a
+ href="https://sourceforge.net/project/showfiles.php?group_id=209101&amp;package_id=285436">
+here</a>, its also ASDF-INSTALLable. </p>
+<h2>Sources</h2>
+<ul>
+  <li>Subversion repository: <a
+ href="http://cl-net-snmp.svn.sourceforge.net/viewvc/cl-net-snmp/usocket-udp/trunk/">
+(View Source) </a><br>
+    <i><a
+ href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/usocket-udp/trunk">https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/usocket-udp/trunk</a><br>
+    </i></li>
+</ul>
+<p> &nbsp; </p>
+<!-- ============= FOOTER ============= -->
+<div class="dateline">Last update at September 24, 2010 by Chun Tian
+(binghe).</div>
+<div class="footline"> CL-NET-SNMP is under <a
+ href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.
+</div>
+<div id="copyright">&copy;2008 Chun Tian (binghe)</div>
+</div>
+<!-- style --><!-- ============= END STYLE.ORG ============= --> </div>
+<!-- framework -->
+</body>
+</html>

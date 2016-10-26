@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <title>cl-net-snmp</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+</head>
+
+<body>
+<div id="framework">
+  <img src="http://sflogo.sourceforge.net/sflogo.php?group_id=209101&amp;type=2"
+       alt="SourceForge.net Logo" id="logo"
+       style="border: 0px solid ; width: 88px; height: 31px;" />
+
+  <div id="nav">
+    <div id="navtext">
+      <a href="http://common-lisp.net/project/cl-net-snmp/">Home</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="https://sourceforge.net/projects/cl-net-snmp/">SF Project</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="asn1.html" class="on">ASN.1</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="snmp.html">SNMP</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="usocket.html">USOCKET-UDP</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="lispworks.html">LispWorks-UDP</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="others.html">Others</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="about.html">About</a>
+    </div>
+  </div>
+  <br style="clear: all;" />
+
+  <!-- ============= STYLE.ORG ============= -->
+  <div id="style">
+    <div class="breadcrumb">
+      <a href="http://common-lisp.net/project/cl-net-snmp/">cl-net-snmp</a>&gt;
+    </div>
+
+    <h1>Abstract Syntax Notation One (ASN.1)</h1>
+    <div class="deck">
+      ASN.1 language mapping for Common Lisp, compiler and runtime support.
+    </div>
+
+    <h2>Features</h2>
+
+    <ul>
+      <li>ASN.1 data representation in Common Lisp</li>
+      <li>Language mapping from ASN.1 basic type to lisp type,
+          OBJECT IDENTIFIER to CLOS-base class</li>
+      <li>BER (Basic Encode Rule) encode/decode on ASN.1 data</li>
+    </ul>
+
+    <!--
+    <h2>Documentation</h2>
+
+    <ul>
+      <li>ASN.1 Package User Guide</li>
+      <li>ASN.1 Package Reference Manual</li>
+    </ul>
+    -->
+
+    <h2>Platform Table</h2>
+
+    <table border="0" cellpadding="0" cellspacing="4" class="parseresults">
+      <tbody>
+	<tr valign="bottom">
+	  <td style="width: 11%;"><strong>CMUCL</strong></td>
+	  <td style="width: 11%;"><strong>SBCL</strong></td>
+	  <td style="width: 11%;"><strong>Clozure CL</strong></td>
+	  <td style="width: 11%;"><strong>LispWorks</strong></td>
+	  <td style="width: 11%;"><strong>Allegro CL</strong></td>
+	  <td style="width: 11%;"><strong>Scieneer CL</strong></td>
+	  <td style="width: 11%;"><strong>CLISP</strong></td>
+	  <td style="width: 11%;"><strong>ECL</strong></td>
+	  <td style="width: 11%;"><strong>ABCL</strong></td>
+	</tr>
+
+	<tr>
+	  <!-- CMUCL -->
+	  <td valign="top">
+	    2008-08 (19E)<br />
+	    2008-10 (19E)
+	  </td>
+
+	  <!-- SBCL -->
+	  <td valign="top">
+	    1.0.18 (debian)
+	    1.0.20<br />
+	  </td>
+	  
+	  <!-- Clozure CL -->
+	  <td valign="top">
+	    1.2<br />
+	  </td>
+	  
+	  <!-- LispWorks -->
+	  <td valign="top">
+	    5.0.2<br />
+	    5.1.1
+	  </td>
+	  
+	  <!-- Allegro CL -->
+	  <td valign="top">
+	    8.1<br />
+	  </td>
+	  
+	  <!-- Scieneer CL -->
+	  <td valign="top">
+	    1.3.8.1<br />
+	  </td>
+	  
+	  <!-- CLISP -->
+	  <td valign="top">
+	    2.44.1 (debian)<br />
+	  </td>
+	  
+	  <!-- ECL -->
+	  <td valign="top">
+	    <br />
+	  </td>
+	  
+	  <!-- ABCL -->
+	  <td valign="top">
+	    <br />
+	  </td>
+	</tr>
+
+	<tr>
+	  <!-- CMUCL -->
+	  <td valign="top">
+	    <strong>Summary</strong>
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #336699;"><strong>Supported</strong></span>
+	    </p>
+	  </td>
+	  
+	  <!-- SBCL -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #336699;"><strong>Supported</strong></span>
+	    </p>
+	  </td>
+	  
+	  <!-- Clozure CL -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #336699;"><strong>Supported</strong></span>
+	    </p>
+	  </td>
+
+	  <!-- LispWorks -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #336699;"><strong>Supported</strong></span>
+	    </p>
+	  </td>
+
+	  <!-- Allegro CL -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #336699;"><strong>Supported</strong></span>
+	    </p>
+	  </td>
+
+	  <!-- Scieneer CL -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #336699;"><strong>Supported</strong></span>
+	    </p>
+	  </td>
+
+	  <!-- CLISP -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #336699;"><strong>Supported</strong></span>
+	    </p>
+	  </td>
+
+	  <!-- ECL -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #993333;"><strong>Unsupported</strong></span>
+	    </p>
+	    <p>
+	      Port PORTABLE-GRAY-STREAMS first
+	    </p>
+	  </td>
+
+	  <!-- ABCL -->
+	  <td valign="top">&nbsp;
+	    <div class="rule"></div>
+	    <p>
+	      <span style="color: #993333;"><strong>Unsupported</strong></span>
+	    </p>
+	    <p>
+	      Port PORTABLE-GRAY-STREAMS first
+	    </p>
+	  </td>
+
+	</tr>
+      </tbody>
+    </table>
+
+    <h2>Live Source Code</h2>
+    <ul>
+      <li>Stable Subversion repository: 
+	<a href="http://cl-net-snmp.svn.sourceforge.net/viewvc/cl-net-snmp/asn.1/branches/4/">
+	  (View Source)
+	</a><br />
+	<i><a href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/asn.1/branches/4">
+	    https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/asn.1/branches/4</a><br /></i></li>
+      <li>Development Subversion repository:
+	<a href="http://cl-net-snmp.svn.sourceforge.net/viewvc/cl-net-snmp/asn.1/trunk/">
+	  (View Source)
+	</a><br />
+	<i><a href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/asn.1/trunk">
+	    https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/asn.1/trunk</a><br /></i></li>
+    </ul>
+
+    <h2>Package Bundle Download</h2>
+    
+    <p>Download all versions of the ASN.1 package (source tar.gz)
+      <a href="https://sourceforge.net/project/showfiles.php?group_id=209101&amp;package_id=285435">
+	here</a>, its also <a href="http://www.cliki.net/ASDF-Install">ASDF-INSTALL</a>able.
+    </p>
+
+    <h2>Loadable Patch for Live Upgrade</h2>
+
+    <table border="0" cellpadding="0" cellspacing="4" class="parseresults">
+      <tbody>
+	<tr valign="bottom">
+	  <td style="width: 10%;"><strong>Package</strong></td>
+	  <td style="width: 10%;"><strong>Version</strong></td>
+	  <td style="width: 10%;"><strong>Release Date</strong></td>
+	  <td style="width: 40%;"><strong>Release Notes</strong></td>
+	  <td style="width: 10%;"><strong>Dependency</strong></td>
+	</tr>
+
+	<!-- ASN.1 -->
+	<tr valign="top">
+	  <td>asn.1-4</td>
+	  <td>
+	    <a href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/asn.1/branches/4/patch/asn.1-4/4-15.lisp">
+	      4.15</a><br />
+	  </td>
+	  <td>
+	    2009-01-21<br />
+	  </td>
+	  <td>
+	    Fix for (BER-EQUAL (GENERAL-TYPE) (GENERAL-TYPE))<br />
+	  </td>
+	  <td>
+	    -<br />
+	  </td>
+	</tr>
+      </tbody>
+    </table>
+
+    <h2>Feature Request or Bugs</h2>
+
+    <p>
+      Reporting a feature request or bug in ASN.1 package should be done
+      by sending e-mail to the
+      <a href="https://lists.sourceforge.net/lists/listinfo/cl-net-snmp-general">
+	cl-net-snmp-general</a> mailing list or direct to the
+      <a href="about.html">author</a>.
+    </p>
+
+    <p>
+      &nbsp;
+    </p>
+    <!-- ============= FOOTER ============= -->
+    <div class="dateline">Last update at January 21, 2009 by Chun Tian (binghe).</div>
+    <div class="footline">
+      CL-NET-SNMP is under <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.
+      <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fcommon-lisp.net%2Fproject%2Fcl-net-snmp%2Fasn1.html">
+	<img src="http://www.w3.org/Icons/valid-xhtml10-blue"
+             alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+      </a>
+    </div>
+    <div id="copyright">&copy;2008, 2009 Chun Tian (binghe)</div>
+
+  </div> <!-- style -->
+  <!-- ============= END STYLE.ORG ============= -->
+</div> <!-- framework -->
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <title>cl-net-snmp</title>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<div id="framework"> <img
+ src="http://sflogo.sourceforge.net/sflogo.php?group_id=209101?type=2"
+ alt="SourceForge.net Logo" id="logo"
+ style="border: 0px solid ; width: 88px; height: 31px;" />
+<div id="nav">
+<div id="navtext"> <a
+ href="http://common-lisp.net/project/cl-net-snmp/">Home</a>
+&nbsp;&nbsp;&nbsp; <a
+ href="https://sourceforge.net/projects/cl-net-snmp/">SF Project</a>
+&nbsp;&nbsp;&nbsp; <a href="asn1.html">ASN.1</a> &nbsp;&nbsp;&nbsp; <a
+ href="snmp.html" class="on">SNMP</a> &nbsp;&nbsp;&nbsp; <a
+ href="usocket.html">USOCKET-UDP</a> &nbsp;&nbsp;&nbsp; <a
+ href="lispworks.html">LispWorks-UDP</a> &nbsp;&nbsp;&nbsp; <a
+ href="others.html">Others</a> &nbsp;&nbsp;&nbsp; <a href="about.html">About</a>
+</div>
+</div>
+<br style="">
+<!-- ============= STYLE.ORG ============= -->
+<div id="style">
+<div class="breadcrumb"> <a
+ href="http://common-lisp.net/project/cl-net-snmp/">cl-net-snmp</a>&gt;
+</div>
+<h1>Simple Network Management Protocol (SNMP)</h1>
+<div class="deck"> SNMP platform on Common Lisp, client and server
+support, and GUI tools. </div>
+<h2>Overview</h2>
+<p> <a href="images/mibrowser.jpg"> <img src="images/mibrowser.jpg"
+ id="mibrowser" alt="MIB Browser"
+ style="border: 0px solid ; width: 80%;"> </a> </p>
+<pre>;;;; A Sample SNMPv3 Query<br>CL-USER 6 &gt; <span
+ style="color: rgb(255, 0, 0);">(snmp:with-open-session (s "192.168.xxx.xxx" :user "md5" :auth '(:md5 "vHunxJXPRdUyAzjY"))</span><br
+ style="color: rgb(255, 0, 0);"><span style="color: rgb(255, 0, 0);">               (snmp:snmp-walk s "system"))</span><br>((#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysDescr.0&gt;<br> &nbsp;"Linux 2950.lab.163.org 2.6.26-2-amd64 #1 SMP Thu Nov 25 04:30:55 UTC 2010 x86_64")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysObjectID.0&gt; #&lt;ASN.1:SIMPLE-OID SNMPv2-SMI::enterprises.8072.3.2.10&gt;)<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysUpTime.0&gt; #&lt;ASN.1:TIMETICKS (19038239) 52:53:02.39&gt;)<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysContact.0&gt; "Chun Tian (binghe) &lt;binghe.lisp@gmail.com&gt;")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysName.0&gt; "2950.lab.163.org")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysLocation.0&gt; "Hangzhou")<br> (#&lt;ASN.1:SIMPLE-OID SNMPv2-MIB::sysORLastChange.0&gt; #&lt;ASN.1:TIMETICKS (0) 0:00:00.00&gt;)<br> ... )<br><br>;;;; Load a new MIB into Lisp at runtime<br>CL-USER 7 &gt; <span
+ style="color: rgb(255, 0, 0);">(snmp:load-mib #p"MIB:IETF;IF-MIB")</span><br>T<br>CL-USER 8 &gt; <span
+ style="color: rgb(255, 0, 0);">(asn.1:oid "ifTable")</span><br>#&lt;ASN.1:OBJECT-ID IF-MIB::ifTable (2) [1]&gt;</pre>
+<h2>Features</h2>
+<ul>
+  <li>Full SNMP protocol support include SNMPv3</li>
+  <li>MIB support based on <a href="asn1.html">ASN.1</a> package,
+resolve OID names from raw ASN.1 definitions.</li>
+  <li>Fast SNMP packet encode/decode based on CLOS features.</li>
+  <li>UDP retransmit support</li>
+  <li>Portable SNMP server running in Lisp image.</li>
+  <li>LISP-MIB for large Lisp application infomation organization.</li>
+  <li>GUI utilities on LispWorks.</li>
+  <li style="font-weight: bold; color: rgb(255, 0, 0);">MIB Compiler on
+all support platform (new in 6.0)</li>
+  <li><span style="font-weight: bold; color: rgb(255, 0, 0);">MIB
+Interpreter, dynamic loading of MIB files on runtime (new in 6.0)</span><br>
+  </li>
+</ul>
+<!--
+    <h2>Documentation</h2>
+
+    <ul>
+      <li>ASN.1 Package User Guide</li>
+      <li>ASN.1 Package Reference Manual</li>
+    </ul>
+    -->
+<h2>Package Dependency<br>
+</h2>
+<ul>
+  <li><a href="http://www.method-combination.net/lisp/ironclad/">IRONCLAD</a><br>
+  </li>
+  <li><a href="http://common-lisp.net/project/usocket/">USOCKET</a>
+0.5.0</li>
+</ul>
+<h2>Supported Platforms<br>
+</h2>
+<ul>
+  <li>LispWorks (recommended)</li>
+  <li>Clozure CL (recommended)</li>
+  <li>CMUCL</li>
+  <li>SBCL</li>
+  <li>ECL<br>
+  </li>
+  <li>Allegro CL</li>
+  <li>Scieneer CL<br>
+  </li>
+</ul>
+<h2><span style="text-decoration: line-through;">Version Dependency
+Table</span><br>
+</h2>
+<table class="parseresults" border="0" cellpadding="0" cellspacing="4">
+  <tbody>
+    <tr valign="bottom">
+      <td style="width: 20%;"><strong>SNMP</strong></td>
+      <td style="width: 20%;"><strong>SNMP-SERVER</strong></td>
+      <td style="width: 20%;"><strong>ASN.1</strong></td>
+      <td style="width: 20%;"><strong>USOCKET-UDP</strong></td>
+      <td style="width: 20%;"><strong>LISPWORKS-UDP</strong></td>
+    </tr>
+    <tr>
+      <td valign="top"><!-- SNMP --> 5.19<br>
+5.16<br>
+5.5<br>
+5.0<br>
+3.0<br>
+2.0 </td>
+      <td valign="top"><!-- SNMP-SERVER --> 3.11<br>
+3.5<br>
+3.0<br>
+2.0 </td>
+      <td valign="top"><!-- ASN.1 --> 4.14<br>
+4.12<br>
+4.5<br>
+4.0<br>
+2.3 </td>
+      <td valign="top"><!-- USOCKET-UDP --> 2.4<br>
+2.3<br>
+2.2<br>
+2.2, 2.1, 2.0<br>
+1.3<br>
+1.2, 1.1, 1.0 </td>
+      <td valign="top"><!-- LISPWORKS-UDP --> -<br>
+-<br>
+3.2<br>
+3.1, 3.0<br>
+2.2, 2.1<br>
+1.1, 1.0 </td>
+    </tr>
+  </tbody>
+</table>
+<h2>Source Code</h2>
+<ul>
+  <li>Stable Subversion repository: <a
+ href="http://cl-net-snmp.svn.sourceforge.net/viewvc/cl-net-snmp/snmp/branches/6/">
+(View Source) </a><br>
+    <a
+ href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/branches/6">
+    <i>https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/branches/6</i>
+    </a> </li>
+  <li>Development Subversion repository: <a
+ href="http://cl-net-snmp.svn.sourceforge.net/viewvc/cl-net-snmp/snmp/trunk/">
+(View Source) </a><br>
+    <i><a
+ href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/trunk">
+https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/trunk</a><br>
+    </i></li>
+</ul>
+<h2>Package Bundle Download</h2>
+<p>Download all versions of the SNMP package (source tar.gz) <a
+ href="http://sourceforge.net/projects/cl-net-snmp/files/snmp/"> here</a>,
+its also <a href="http://www.cliki.net/ASDF-Install">ASDF-INSTALL</a>able.
+
+</p>
+<h2>Loadable Patch for Live Upgrade</h2>
+<table class="parseresults" border="0" cellpadding="0" cellspacing="4">
+  <tbody>
+    <tr valign="bottom">
+      <td style="width: 10%;"><strong>Package</strong></td>
+      <td style="width: 10%;"><strong>Version &amp; Download</strong></td>
+      <td style="width: 10%;"><strong>Release Date</strong></td>
+      <td style="width: 40%;"><strong>Release Notes</strong></td>
+      <td style="width: 10%;"><strong>Dependency</strong></td>
+    </tr>
+<!-- SNMP --> <tr>
+      <td style="vertical-align: top;">snmp-6<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">none<br>
+      </td>
+    </tr>
+    <tr valign="top">
+      <td>snmp-5</td>
+      <td> <a
+ href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/branches/5/patch/snmp-5/5-20.lisp">
+5.20</a><br>
+      <a
+ href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/branches/5/patch/snmp-5/5-21.lisp">
+5.21</a><br>
+      <a
+ href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/branches/5/patch/snmp-5/5-22.lisp">
+5.22</a><br>
+      </td>
+      <td> 2008-11-17<br>
+2008-12-17<br>
+2009-01-21<br>
+      </td>
+      <td> Multiple fixes for SNMP-BULK<br>
+Restore CREATE-SOCKET keyword in OPEN-SESSION<br>
+Fix for handle SNMP-WALK terminal condition correctly<br>
+      </td>
+      <td> -<br>
+-<br>
+-<br>
+      </td>
+    </tr>
+<!-- SNMP Server --> <tr valign="top">
+      <td>snmp-server-3</td>
+      <td> <a
+ href="https://cl-net-snmp.svn.sourceforge.net/svnroot/cl-net-snmp/snmp/branches/5/patch/snmp-server-3/3-12.lisp">
+3.12</a><br>
+      </td>
+      <td> 2008-12-4<br>
+      </td>
+      <td> Fix for "lispMachineVersion"<br>
+      </td>
+      <td> -<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h2>Documentation</h2>
+<p>Not available at this time, sorry ...<br>
+</p>
+<h2>Feature Request or Bugs</h2>
+<p> Reporting a feature request or bug in SNMP package should be done
+by sending e-mail to the <a
+ href="https://lists.sourceforge.net/lists/listinfo/cl-net-snmp-general">
+cl-net-snmp-general</a> mailing list or direct to the <a
+ href="about.html">author</a>. </p>
+<p> &nbsp; </p>
+<!-- ============= FOOTER ============= -->
+<div class="dateline">Last update at March 19, 2011 by Chun Tian
+(binghe).</div>
+<div class="footline"> CL-NET-SNMP is under <a
+ href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.&nbsp;<a
+ href="http://validator.w3.org/check?uri=http%3A%2F%2Fcommon-lisp.net%2Fproject%2Fcl-net-snmp%2Fsnmp.html">
+</a> </div>
+<div id="copyright">&copy;2008, 2009, 2011 Chun Tian (binghe)</div>
+</div>
+<!-- style --><!-- ============= END STYLE.ORG ============= --> </div>
+<!-- framework -->
+</body>
+</html>

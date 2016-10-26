@@ -1,0 +1,132 @@
+                  2009 International Lisp Conference
+
+         Sunday, March 22, through Wednesday, March 25, 2009
+
+                         Preliminary Program
+
+
+TUTORIALS  (Sunday)
+
+   CLOS: Generic Functions and the Metaobject Protocol
+         Pascal Costanza
+
+   Context-oriented Programming with ContextL
+         Pascal Costanza
+
+   Clojure in Depth
+         Rich Hickey
+
+   Graphical User Interfaces with LTk
+         Peter Herth
+
+   Monads for the Working Lisp Programmer
+         Ravi Nanavati and Jeff Newbern
+
+
+INVITED TALKS  (to be announced)
+
+
+TECHNICAL PAPERS  (Monday through Wednesday)
+
+   The (Abridged) Art of the Propagator
+         Alexey Radul and Gerald Jay Sussman
+
+   Unification of Geospatial Reasoning, Temporal Logic, and Social
+Network Analysis in Event-Based Systems
+         Jans Aasman and Gary King
+
+   The Future of S-expression Languages for Scientific Computing
+         John Amuedo
+
+   SNMP for Common Lisp
+         Chun Tian
+
+   Jnil: From Java to Common Lisp
+         Tiago Maduro Dias and Antonio Menezes Leitao
+
+   A Parallel, Lisp-Based Genetic Programming System for Discovering
+Satisfiability Solvers
+         Alex S Fukunaga
+
+   Model-based Intrusion Assessment in Common Lisp
+         Robert P. Goldman and Steven A. Harp
+
+   CARMA: Platform Freedom for a Graphical Lisp Application through
+Armed Bear Common Lisp
+         John D. Hastings and Alexandre V. Latchininsky
+
+   An Unexceptional Implementation of Continuations
+         Joe Marshall
+
+   Automatically Generated Type-safe GTK+ Binding for Dylan
+         Hannes Mehnert
+
+   Rhapsody: How CLOS simplifies System-in-a-Package Design
+         Jim Newton and Janez Jaklic
+
+   Implementing a Parallelism Library for a Functional Subset of LISP
+         David Rager and Warren A. Hunt Jr.
+
+   Towards a Secure Programming Language
+         Howard Shrobe
+
+   Reconciling Generic Functions with Actors
+         Jorge Vallejos, Pascal Costanza, Tom Van Cutsem, and Wolfgang
+de Meuter
+
+   CLOS Efficiency: Instantiation (On the Behavior and Performance of
+LISP, Part 2.1)
+         Didier Verna
+
+
+PANEL SESSION  (Monday)
+
+   The Future of Lisp
+
+
+DEMONSTRATIONS  (Monday through Wednesday)
+
+   AutoPrice: Automatic Unit Price Forecasting Utilizing Multiple
+Regression in LISP
+         Erin Fleming, Glenn House, and Kyle McGivney
+
+   Operational Assessment Support Information System (OASIS)
+         Glenn D. House Sr. and Charles A. Cox
+
+   SHOPPER: Interpreter for a High-level Web Services Language
+         Robert Goldman and John Maraist
+
+   XCVB, the eXtensible Component Verifier and Builder
+         Francois-Rene Rideau and Spencer Brody
+
+   A Common Lisp Application for Large-scale Bioinformatics
+         Alberto Riva
+
+   Common Lisp for a Common Cultural Recommendation System
+         Emre Sevinc, Remzi Emre Basar, and Boran Puhaloglu
+
+   Syntactic Extension of Regular Expression Production Sets Using Lisp
+         Jon L White
+
+
+LIGHTNING TALKS  (Tuesday)
+
+   Intertwining in the Core of CLforJava
+         Jerry Boetje
+
+   Threads in Clozure CL
+         R. Matthew Emerson
+
+   Is Lisp an Acceptable Ruby?
+         Brian Ericson
+
+(Others may sign up at the conference to give additional lightning
+talks.)
+
+---
+
+Conference Chair: Daniel Weinreb (ITA Software)
+  General correspondence: ilc09-organizing-committee at alu.org
+Program Chair: Guy L. Steele Jr. (Sun Microsystems Laboratories)
+  Contact: ilc09-program-committee at alu.org
+Local chair: Howard Shrobe (MIT)
